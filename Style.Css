@@ -1,95 +1,156 @@
-/* Source 51: Global Reset and Font Family */
+/* Source 51: Global Reset and Typography */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', system-ui, sans-serif; 
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* Source 51: Layout for the main viewport */
+/* Source 51: Centered Layout with Deep Gradient Background */
 body {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at top left, #1e1e2e, #11111b); /* Source 51: Base was rgb(37, 37, 37) */
+  background: radial-gradient(circle at top left, #1e1e2e, #11111b);
+  padding: 20px;
 }
 
-/* Source 51: Primary Card Container */
+/* Source 51: Glassmorphism Card Container */
 .container {
-  width: 500px; /* Source 51 */
-  background: rgba(255, 255, 255, 0.03); /* Source 51: Base was rgb(65, 65, 65) */
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(12px);
-  border-radius: 24px; /* Source 51: Base was 16px */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); /* Source 51 */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* Source 51: Top Navigation Bar */
+/* Source 51: Header Styling */
 .nav-like {
-  height: 80px;
-  background-color: rgb(24, 24, 24); /* Source 51 */
-  color: azure; /* Source 51 */
+  min-height: 80px;
+  height: auto;
+  background: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 25px; /* Source 51 */
+  padding: 15px 30px;
 }
 
-/* Source 3: Internal Form Styling */
+/* Source 51, 52: Modern Logo Scaling for Large Files */
+.main-logo {
+  max-width: 120px; /* Constrains large logos */
+  max-height: 60px; /* Keeps header height stable */
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Prevents stretching */
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.main-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Source 3, 43-60: The Login Form Box */
 .form-login {
-  color: azure; /* Source 3 */
-  background-color: rgb(24, 24, 24); /* Source 3 */
-  width: 90%; /* Source 3 */
-  margin: 30px auto;
+  width: 90%;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
-  padding: 24px 20px;
-  border-radius: 12px;
-  gap: 14px;
+  padding: 30px 24px;
+  gap: 20px;
+  color: azure;
 }
 
-/* Source 3 & 5: Input Fields and Placeholders */
+/* Source 3, 81-89: Input Field Styling */
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group i {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+}
+
 .input-group input {
-  width: 100%; /* Source 3 */
-  height: 40px; /* Source 3 */
-  padding: 0 40px 0 36px; /* Source 3 */
-  border-radius: 8px; /* Source 5 */
-  background: transparent; /* Source 5 */
-  color: white; /* Source 5 */
+  width: 100%;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0 16px 0 45px;
+  color: #fff;
+  transition: all 0.3s ease;
 }
 
 .input-group input:focus {
   outline: none;
-  border-color: #ff4400; /* Source 5: Was orangered */
+  border-color: #ff4400; /* Modern accented orange */
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 4px rgba(255, 68, 0, 0.15);
 }
 
-/* Source 52: Primary Action Button */
+/* Source 5, 122-131: Primary Action Button */
 button {
-  height: 40px; /* Source 5 */
-  background: rgb(255, 68, 0); /* Source 5 */
-  color: white; /* Source 5 */
+  height: 48px;
+  background: linear-gradient(135deg, #ff6b00, #ff4400);
+  color: #fff;
   border: none;
-  border-radius: 8px; /* Source 52 */
-  font-weight: 600; /* Source 52 */
+  border-radius: 12px;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.2s, filter 0.2s;
+  margin-top: 10px;
 }
 
-/* Source 52: Hover effects */
 button:hover {
-  background: rgb(220, 60, 0); /* Source 52 */
-  transform: translateY(-1px); /* Source 52 */
+  filter: brightness(1.1);
+  transform: translateY(-2px);
 }
 
-/* Source 6 & 52: Footer Account Link */
+/* Source 4, 187-203: Social Media Footer */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.social-icons i {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons i:hover {
+  color: #ff4400;
+  transform: scale(1.2);
+}
+
+/* Source 6, 204-216: Bottom Account Link */
 .no-account {
-  display: flex; /* Source 52 */
-  align-items: center; /* Source 6 */
-  justify-content: center; /* Source 6 */
-  gap: 3px; /* Source 6 */
-  height: 50px; /* Source 6 */
-  background: rgb(24, 24, 24); /* Source 6 */
-  margin: 30px 25px; /* Source 6 */
-  border-radius: 10px; /* Source 6 */
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.no-account a {
+  color: #ff4400;
+  text-decoration: none;
+  font-weight: 600;
 }
